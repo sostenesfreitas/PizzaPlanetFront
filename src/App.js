@@ -1,11 +1,12 @@
 import React from "react";
-import AppStyles from "./App.styles";
-import Card from "./Components/Card";
+import GlobalStyle from "./styles/global";
+import Routes from "./routes";
 
 const App = () => (
-  <AppStyles>
-    <Card />
-  </AppStyles>
+  <>
+    <Routes />
+    <GlobalStyle />
+  </>
 );
 
 export default App;

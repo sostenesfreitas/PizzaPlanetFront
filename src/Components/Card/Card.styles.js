@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 const CardStyles = styled.div`
-  width: 40%;
+  max-width: 700px;
   box-shadow: 13px 13px 34px 10px rgba(140, 140, 140, 0.63);
   padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 80px auto;
+  border-radius: 5px;
 
-  @media only screen and (max-width: 1024px) {
+  @media (max-width: 1024px) {
     width: 100%;
   }
 
@@ -28,12 +31,12 @@ const CardStyles = styled.div`
 
   .card-body {
     display: flex;
-    width: 47%;
+    width: 50%;
     align-items: center;
     border-bottom: solid 1px #c2c2c2;
     padding: 10px;
     cursor: pointer;
-    @media only screen and (max-width: 1024px) {
+    @media (max-width: 1024px) {
       width: 100%;
     }
   }

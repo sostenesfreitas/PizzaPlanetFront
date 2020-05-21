@@ -116,7 +116,12 @@ const Card = () => {
           </div>
         ))}
       </div>
-      <Modal show={modal} onClose={closeModal} product={prod} />
+      <Modal
+        show={modal}
+        onClose={closeModal}
+        product={prod}
+        products={products}
+      />
     </CardStyles>
   );
 };
