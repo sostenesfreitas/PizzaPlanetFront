@@ -9,11 +9,15 @@ export default createGlobalStyle`
 }
 
 html, body, #root {
-    min-height: 100%
+    height: 100%;
 }
 
 body {
     -webkit-font-smoothing: antialiased !important;
+    background:url('Pizza_Planet.jpg') no-repeat fixed top;
+    background-size: cover;
+    backdrop-filter: blur(3px);
+    padding-top:60px;
 }
 
 body, input, button {
@@ -25,4 +29,6 @@ body, input, button {
 button{
     cursor: pointer;
 }
+
+
 `;

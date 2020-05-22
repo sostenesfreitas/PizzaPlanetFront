@@ -2,25 +2,28 @@ import styled from "styled-components";
 
 const CardStyles = styled.div`
   max-width: 700px;
-  box-shadow: 13px 13px 34px 10px rgba(140, 140, 140, 0.63);
   padding: 20px;
   font-family: Arial, Helvetica, sans-serif;
-  margin: 80px auto;
+  margin: 0 auto;
   border-radius: 5px;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #f2f2f2;
+  border: solid 1px #c2c2c2;
+  font-weight: bold;
 
   @media (max-width: 1024px) {
     width: 100%;
   }
 
-  h1 {
-    color: #3d3d3d;
+  p {
+    color: #c2c2c2;
   }
 
   h4 {
-    font-size: 30px;
-    color: #707070;
+    font-size: 18px;
     &:hover {
-      opacity: 0.7;
+      color: #fff;
     }
   }
 
@@ -33,7 +36,6 @@ const CardStyles = styled.div`
     display: flex;
     width: 50%;
     align-items: center;
-    border-bottom: solid 1px #c2c2c2;
     padding: 10px;
     cursor: pointer;
     @media (max-width: 1024px) {

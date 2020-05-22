@@ -10,11 +10,11 @@ const ModalStyles = styled.div`
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgb(92, 92, 92);
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
 
   .modal-content {
-    background-color: #fefefe;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
@@ -22,7 +22,6 @@ const ModalStyles = styled.div`
     border-radius: 5px;
 
     h1 {
-      color: #707070;
     }
   }
 
@@ -33,13 +32,9 @@ const ModalStyles = styled.div`
     font-weight: bold;
   }
 
-  p {
-    color: #aaaaaa;
-  }
-
   .close:hover,
   .close:focus {
-    color: #000;
+    color: #fff;
     text-decoration: none;
     cursor: pointer;
   }
@@ -56,12 +51,13 @@ const ModalStyles = styled.div`
 
     p {
       cursor: pointer;
+      color: #fff;
     }
   }
 
   label {
-    color: #999790;
     margin-left: 5px;
+    color: #fff;
   }
 
   .flavors {
@@ -74,7 +70,7 @@ const ModalStyles = styled.div`
   }
 
   .buttom {
-    background-color: #4caf50;
+    background-color: #95fc65;
     border: none;
     color: white;
     padding: 10px 20px;
@@ -84,9 +80,10 @@ const ModalStyles = styled.div`
     font-size: 16px;
     margin: 4px 0 2px auto;
     transition-duration: 0.4s;
+    opacity: 0.9;
     cursor: pointer;
     &:hover {
-      opacity: 0.7;
+      opacity: 1;
     }
   }
 
