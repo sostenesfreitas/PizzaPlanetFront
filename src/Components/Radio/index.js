@@ -13,9 +13,7 @@ const Radio = ({ check, setCheck, label, id }) => (
         />
         <label htmlFor={id} />
       </div>
-      <p role="buttom" onClick={() => setCheck()}>
-        {label}
-      </p>
+      <p onClick={() => setCheck()}>{label}</p>
     </div>
   </RadioStyles>
 );

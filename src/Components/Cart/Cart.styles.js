@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const CartStyles = styled.div`
   display: flex;
-  justify-content: space-around;
 
   @media (max-width: 1024px) {
     flex-direction: column;
@@ -22,13 +21,22 @@ const CartStyles = styled.div`
     padding: 20px;
     font-family: Arial, Helvetica, sans-serif;
     margin: 10px 0;
-
+    align-self: center;
+    margin: 10px auto;
     border-radius: 5px;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.7);
     color: #f2f2f2;
     border: solid 1px #c2c2c2;
     font-weight: bold;
+  }
+
+  .infos {
+    margin-left: auto;
+  }
+
+  .resume {
+    padding: 20px;
   }
 
   .box-title {
@@ -47,11 +55,21 @@ const CartStyles = styled.div`
 
   input {
     margin-top: 10px;
-    padding: 10px 0px;
+    padding: 10px 5px;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.7);
     color: #f2f2f2;
     border: none;
+  }
+
+  [type="button"] {
+    cursor: pointer;
+    margin-left: 10px;
+    padding: 10px 20px;
+    opacity: 0.8;
+    &:hover {
+      opacity: 1;
+    }
   }
 `;
 

@@ -1,13 +1,32 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 import ModalStyles from "./Modal.styles";
 import Radio from "../Radio";
 
-const Modal = ({ show, onClose, product, products }) => {
+const Modal = (props) => {
+  const { show, onClose, product, products, dispatch } = props;
   const [flavor, setFlavor] = useState("");
   const [mega, setMega] = useState(false);
   const [sabor, setSabor] = useState(false);
   const [bebida, setBebida] = useState(false);
   const [total, setTotal] = useState(10);
+
+  const handleProduct = () => {
+    const productCart = {
+      firstFlavor: product.flavor,
+      secondFlavor: flavor || "",
+      drink: bebida || "",
+      mega: mega || "",
+      total: total,
+    };
+
+    dispatch({
+      type: "ADD_TO_CART",
+      productCart,
+    });
+
+    onClose();
+  };
 
   const select = (type) => {
     switch (type) {
@@ -32,7 +51,7 @@ const Modal = ({ show, onClose, product, products }) => {
   return (
     <ModalStyles show={show}>
       <div className="modal-content">
-        <span className="close" role="buttom" onClick={() => onClose()}>
+        <span className="close" onClick={() => onClose()}>
           &times;
         </span>
         <h1>{product.flavor}</h1>
@@ -77,7 +96,12 @@ const Modal = ({ show, onClose, product, products }) => {
 
           <div className="box-bottom">
             <p>R$ {total},00</p>
-            <input type="button" value="Salvar" className="buttom" />
+            <input
+              type="button"
+              value="Salvar"
+              className="buttom"
+              onClick={() => handleProduct(product)}
+            />
           </div>
         </div>
       </div>
@@ -85,4 +109,4 @@ const Modal = ({ show, onClose, product, products }) => {
   );
 };
 
-export default Modal;
+export default connect()(Modal);

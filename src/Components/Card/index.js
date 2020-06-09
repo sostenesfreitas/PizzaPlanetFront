@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import CardStyles from "./Card.styles";
 import Modal from "../Modal";
 import axios from "axios";
 
-const Card = () => {
+const Card = ({ cart }) => {
   const [products, setProducts] = useState([]);
   const [prod, setProd] = useState("");
   const [modal, setModal] = useState(false);
@@ -99,6 +101,9 @@ const Card = () => {
     <CardStyles>
       <div className="box-title">
         <h1>Pizzas</h1>
+        <Link to="/cart">
+          <h1>cart</h1>
+        </Link>
       </div>
       <div className="cards">
         {products.map((product) => (
@@ -126,4 +131,6 @@ const Card = () => {
   );
 };
 
-export default Card;
+export default connect((state) => ({
+  cart: state.cart,
+}))(Card);
