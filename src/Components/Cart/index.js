@@ -154,6 +154,8 @@ const Cart = ({ cart }) => {
   );
 };
 
-export default connect((state) => ({
+const mapStateToProps = (state) => ({
   cart: state.cart,
-}))(Cart);
+});
+
+export default connect(mapStateToProps)(Cart);

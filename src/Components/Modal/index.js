@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import ModalStyles from "./Modal.styles";
 import Radio from "../Radio";
+import * as CartActions from "../../store/modules/cart/actions";
 
 const Modal = (props) => {
-  const { show, onClose, product, products, dispatch } = props;
+  const { show, onClose, product, products, addToCart } = props;
   const [flavor, setFlavor] = useState("");
   const [mega, setMega] = useState(false);
   const [sabor, setSabor] = useState(false);
@@ -13,6 +15,7 @@ const Modal = (props) => {
 
   const handleProduct = () => {
     const productCart = {
+      id: product._id,
       firstFlavor: product.flavor,
       secondFlavor: flavor || "",
       drink: bebida || "",
@@ -20,10 +23,7 @@ const Modal = (props) => {
       total: total,
     };
 
-    dispatch({
-      type: "ADD_TO_CART",
-      productCart,
-    });
+    addToCart(productCart);
 
     onClose();
   };
@@ -109,4 +109,6 @@ const Modal = (props) => {
   );
 };
 
-export default connect()(Modal);
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(CartActions, dispatch);
+export default connect(null, mapDispatchToProps)(Modal);

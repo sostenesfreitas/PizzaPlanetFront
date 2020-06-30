@@ -5,7 +5,7 @@ import CardStyles from "./Card.styles";
 import Modal from "../Modal";
 import axios from "axios";
 
-const Card = ({ cart }) => {
+const Card = () => {
   const [products, setProducts] = useState([]);
   const [prod, setProd] = useState("");
   const [modal, setModal] = useState(false);
@@ -131,6 +131,8 @@ const Card = ({ cart }) => {
   );
 };
 
-export default connect((state) => ({
+const mapStateToProps = (state) => ({
   cart: state.cart,
-}))(Card);
+});
+
+export default connect(mapStateToProps)(Card);
